@@ -56,18 +56,18 @@ const ST=['Intelligence','Speed','Safety','Explainability','Human Control'];
 const DS=['AI วิเคราะห์ข้อมูลซับซ้อนและแก้ปัญหาได้ดีขึ้น','AI ตัดสินใจและตอบสนองต่อเหตุการณ์ได้เร็วขึ้น','AI ให้ความสำคัญกับความปลอดภัยและลดความเสียหาย','AI อธิบายเหตุผลของการตัดสินใจได้ชัดเจน','AI ส่งต่อการตัดสินใจให้มนุษย์และยอมรับการแทรกแซง'];
 const AV=[
  'https://i.postimg.cc/RFHsMn5q/images.jpg',
- 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=160&q=80',
- 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=160&q=80',
- 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=160&q=80',
- 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=160&q=80',
- 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=160&q=80'
+ 'https://i.postimg.cc/vBs9V1xF/images-(1).jpg',
+ 'https://i.postimg.cc/9XxRWgbQ/images-(4).jpg',
+ 'https://i.postimg.cc/sgWv4jrS/images-(3).jpg',
+ 'https://i.postimg.cc/NMsFtRr7/images-(2).jpg',
+ 'https://i.postimg.cc/s2yDP5Kz/images-(5).jpg'
 ];
 // img: ใส่ลิงก์รูปหรือพาธไฟล์ เช่น 'img/1.jpg' (ถ้าว่างหรือโหลดไม่ได้ จะโชว์ไอคอนแทน) · time: วินาที (ไม่ใส่ = 30)
 const SC=[
 {ic:'',img:'https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=80',t:'AI Healthcare',w:[30,10,35,10,15],q:'ปี 2035 โรงพยาบาลมีผู้ป่วยฉุกเฉิน 3 คน แต่มีทรัพยากรรักษาเร่งด่วนเพียง 1 คน AI ต้องช่วยจัดลำดับความเร่งด่วน',
  o:{A:'ผู้ป่วย A — โอกาสรอด 90% · ความเร่งด่วนปานกลาง',B:'ผู้ป่วย B — โอกาสรอด 70% · ความเร่งด่วนสูง',C:'ผู้ป่วย C — โอกาสรอด 50% · วิกฤต'},
  p:{A:5,B:30,C:10},tw:'เซ็นเซอร์ของผู้ป่วย C ผิดพลาด โอกาสรอดจริงอาจเหลือเพียง 20% ขณะที่อาการผู้ป่วย B ทรุดลงเร็วมาก'},
-{ic:'',img:'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',t:'AI Financial Crisis',time:15,w:[30,35,15,10,10],q:'AI ตรวจพบสัญญาณว่าตลาดกำลังจะ Crash — มีเวลาตัดสินใจ 15 วินาที',
+{ic:'',img:'https://i.postimg.cc/SsPhP9LQ/images-(6).jpg',t:'AI Financial Crisis',time:15,w:[30,35,15,10,10],q:'AI ตรวจพบสัญญาณว่าตลาดกำลังจะ Crash — มีเวลาตัดสินใจ 15 วินาที',
  o:{A:'ขายสินทรัพย์ทั้งหมด',B:'ไม่ทำอะไร',C:'ลดความเสี่ยงบางส่วน + ให้มนุษย์ตรวจสอบ'},
  p:{A:5,B:0,C:30},tw:'สัญญาณบางส่วนอาจเป็น false alarm ความมั่นใจของโมเดลลดจาก 85% เหลือ 55%'},
 {ic:'',img:'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80',t:'AI Workplace Safety',time:20,w:[15,20,40,5,20],q:'Sensor ตรวจพบว่าคนงานกำลังเข้าใกล้พื้นที่ที่ Robot ทำงานผิดปกติ',
@@ -76,13 +76,13 @@ const SC=[
 {ic:'',img:'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80',t:'AI Education',w:[25,10,10,30,25],q:'AI พบว่างานของนักศึกษาคนหนึ่งมีรูปแบบเหมือน AI Generated 95%',
  o:{A:'ให้ 0 คะแนนทันที',B:'แจ้งอาจารย์และให้อาจารย์ตรวจสอบ',C:'ถามนักศึกษาเพิ่มเติมและวิเคราะห์หลักฐานก่อน'},
  p:{A:0,B:20,C:30},tw:'นักศึกษาใช้เครื่องมือช่วยตรวจภาษาเพราะเรียนเป็นภาษาที่สอง ความมั่นใจของ AI detector ลดเหลือ 60%'},
-{ic:'',img:'https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=1200&q=80',t:'AI Self-Driving Car',time:15,w:[15,35,25,5,20],q:'รถไร้คนขับตรวจพบคนเดินข้ามถนนกะทันหันห่างไป 20 เมตร ขณะวิ่ง 60 กม./ชม.',
+{ic:'',img:'https://i.postimg.cc/xdCjF9rg/images-(7).jpg',t:'AI Self-Driving Car',time:15,w:[15,35,25,5,20],q:'รถไร้คนขับตรวจพบคนเดินข้ามถนนกะทันหันห่างไป 20 เมตร ขณะวิ่ง 60 กม./ชม.',
  o:{A:'เบรกฉุกเฉินเต็มแรงอย่างเดียว',B:'เบรก + หักหลบเข้าเลนข้าง',C:'เบรก + บีบแตร + เปิดไฟฉุกเฉิน + แจ้งผู้ควบคุมระยะไกล'},
  p:{A:10,B:5,C:30},tw:'เซ็นเซอร์ด้านหลังพบรถบรรทุกตามมาติดมาก และเลนข้างมีรถจักรยานยนต์วิ่งอยู่'},
-{ic:'',img:'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',t:'AI Hiring',w:[10,10,15,40,25],q:'AI คัดใบสมัครงาน 500 ใบ แต่พบว่าให้คะแนนผู้สมัครหญิงต่ำกว่าผู้สมัครชายอย่างผิดปกติ',
+{ic:'',img:'https://i.postimg.cc/g0QpSRHr/images-(8).jpg',t:'AI Hiring',w:[10,10,15,40,25],q:'AI คัดใบสมัครงาน 500 ใบ แต่พบว่าให้คะแนนผู้สมัครหญิงต่ำกว่าผู้สมัครชายอย่างผิดปกติ',
  o:{A:'ใช้ผลต่อไป เพราะแม่นยำเชิงสถิติ',B:'หยุดใช้ทั้งหมด ให้ HR คัดเอง',C:'ใช้ต่อ แต่ให้ HR ตรวจกลุ่มที่ถูกคัดออก และเปิดเผยเกณฑ์'},
  p:{A:0,B:15,C:30},tw:'ข้อมูลที่ใช้ฝึก AI เป็นประวัติพนักงาน 10 ปี ซึ่งส่วนใหญ่เป็นชาย และ HR มีแค่ 2 คน ต้องคัดให้เสร็จใน 2 วัน'},
-{ic:'',img:'https://images.unsplash.com/photo-1586339949216-35c4f3aaf87d?auto=format&fit=crop&w=1200&q=80',t:'AI vs Deepfake',time:20,w:[20,25,15,20,20],q:'คลิปผู้บริหารบริษัทประกาศล้มละลายกำลังแพร่ในโซเชียล AI ประเมินว่าเป็น Deepfake 80%',
+{ic:'',img:'https://i.postimg.cc/zBCQCRd7/c3fd154c-a000-4f5f-8160-1cf45b5e7634.png',t:'AI vs Deepfake',time:20,w:[20,25,15,20,20],q:'คลิปผู้บริหารบริษัทประกาศล้มละลายกำลังแพร่ในโซเชียล AI ประเมินว่าเป็น Deepfake 80%',
  o:{A:'ลบคลิปทันที',B:'ติดป้ายเตือน + ลดการเผยแพร่ + ส่งมนุษย์ตรวจสอบ',C:'ปล่อยไว้ก่อน รอข้อมูลเพิ่ม'},
  p:{A:10,B:30,C:0},tw:'ความมั่นใจลดเหลือ 55% เพราะอาจเป็นคลิปจริงที่ถูกตัดต่อบางส่วน และมีผู้ชมแล้ว 2 ล้านครั้ง'},
 {ic:'',img:'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80',t:'AI Smart Grid',w:[20,25,30,5,20],q:'คลื่นความร้อนทำให้ไฟฟ้าของเมืองขาดแคลน 20% AI ต้องตัดสินใจเรื่องการจ่ายไฟ',
