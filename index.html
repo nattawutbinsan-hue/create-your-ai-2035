@@ -9,11 +9,11 @@
 :root{--bg:#fff3d6;--ink:#1d1b3a;--card:#fff;--ac:#ff5a5f;--ac2:#2b6cff;--yl:#ffc83d;--gr:#2bb673;--mu:#6b6a85;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}
 body{margin:0;color:var(--ink);font:16px/1.55 Sarabun,system-ui,sans-serif;background:var(--bg) radial-gradient(#1d1b3a26 1.3px,transparent 1.5px) 0 0/20px 20px}
-#app{width:100%;max-width:1100px;margin:0 auto;padding:10px}
+#app{width:100%;max-width:1000px;margin:0 auto;padding:14px}
 h1,h2{font-family:Mali,Sarabun,sans-serif;margin:6px 0 10px}
 h1{font-size:30px;text-align:center;line-height:1.2;transform:rotate(-1.5deg);background:var(--yl);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:10px;border-radius:12px}
 h2{font-size:21px}
-.card{background:var(--card);border:2.5px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);padding:18px;margin:12px 0}
+.card{background:var(--card);border:2.5px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);padding:16px;margin:16px 0}
 .c{text-align:center}.mu{color:var(--mu);font-size:14px}
 .code{font:800 44px Mali;letter-spacing:8px;color:var(--ac)}
 button{font:700 16px Sarabun;border:2.5px solid var(--ink);border-radius:10px;padding:10px 16px;background:var(--ac2);color:#fff;box-shadow:3px 3px 0 var(--ink);cursor:pointer}
@@ -28,20 +28,22 @@ input{font:inherit;width:100%;padding:12px;border-radius:10px;border:2.5px solid
 .bar{height:16px;border-radius:8px;border:2px solid var(--ink);background:#fff;overflow:hidden;flex:1}
 .bar i{display:block;height:100%;background:var(--ac2);transition:width .25s linear}
 .av{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
-.av button{font-size:26px;padding:4px 10px;background:#fff;box-shadow:none}
+.av button{padding:5px;background:#fff;box-shadow:none;display:flex;align-items:center;justify-content:center}
+.avatar-img{width:38px;height:38px;border-radius:10px;object-fit:cover;border:2px solid var(--ink);display:inline-block;vertical-align:middle}.team-avatar{width:30px;height:30px;border-radius:8px;margin-right:6px;vertical-align:middle}.team-cell{display:flex;align-items:center;gap:6px}.howto{font-size:18px;line-height:1.8;background:#fff9e8;border:3px solid var(--ink);box-shadow:7px 7px 0 var(--ink);padding:22px}.howto h2{font-size:28px;margin-top:0}.howto li{margin:8px 0}
 .av button.on{background:var(--yl);box-shadow:3px 3px 0 var(--ink)}
 .opt{display:block;width:100%;text-align:left;margin:10px 0;background:#fff;color:var(--ink);font-weight:600}
 .opt.on{background:var(--yl)}
 .tw{background:#ffe3e3;border-color:var(--ac)}
 .host{background:#e3ecff}
 .pill{display:inline-block;padding:1px 12px;border:2px solid var(--ink);border-radius:99px;background:var(--yl);font-size:13px;font-weight:800}
-.pic{position:relative;height:230px;margin:10px 0;border:2.5px solid var(--ink);border-radius:12px;overflow:hidden;background:#e9eef7;display:flex;align-items:center;justify-content:center}.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.pic .fallback{font-weight:800;font-size:22px}
+.pic{position:relative;height:150px;margin:10px 0;border:2.5px solid var(--ink);border-radius:12px;overflow:hidden;background:linear-gradient(135deg,#bfe0ff,#ffd9a8);display:flex;align-items:center;justify-content:center;font-size:76px}
 .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .tmr{display:flex;align-items:center;gap:10px;margin-top:8px}.tmr b{font:800 26px Mali;width:42px}
 ol,ul{margin:6px 0;padding-left:22px}li{margin:4px 0}
 .sc{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px 4px;text-align:center;border-bottom:1.5px solid var(--ink)}td:first-child,th:first-child{text-align:left;white-space:nowrap}
-.ai-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;vertical-align:middle;border:2px solid var(--ink);background:#fff}.ai-avatar-sm{width:32px;height:32px;border-radius:50%;object-fit:cover;vertical-align:middle;border:1.5px solid var(--ink)}.instructions{font-size:18px;line-height:1.8}.instructions h2{font-size:26px}.instructions li{margin:8px 0}.team-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.team-chip{display:flex;align-items:center;gap:8px;padding:10px;border:2px solid var(--ink);border-radius:10px;background:#fff}@media(max-width:600px){#app{padding:6px;max-width:none}h1{font-size:25px}.card{padding:12px;margin:9px 0}.instructions{font-size:17px}.instructions h2{font-size:23px}.pic{height:190px}.opt{font-size:16px;padding:12px}table{font-size:13px}}</style></head><body><div id="app">กำลังโหลด…</div>
+@media(max-width:700px){#app{max-width:none;padding:8px}.card{margin:12px 0;padding:14px;border-radius:12px;box-shadow:4px 4px 0 var(--ink)}h1{font-size:24px;padding:9px}.howto{font-size:17px;line-height:1.75;padding:17px}.howto h2{font-size:23px}.row{gap:6px}.row>span:first-child{max-width:48%;width:auto!important}.pic{height:170px}.opt{padding:11px 12px}.sc{margin-left:-4px;margin-right:-4px}table{font-size:13px}.code{font-size:36px}.team-avatar{width:28px;height:28px}.avatar-img{width:34px;height:34px}}
+</style></head><body><div id="app">กำลังโหลด…</div>
 <script>
 const FB={
   apiKey:'AIzaSyDQQGewLcxS6_fhhXUQYNh7blJE8eZJS9o',
@@ -52,41 +54,49 @@ const FB={
 };
 const ST=['Intelligence','Speed','Safety','Explainability','Human Control'];
 const DS=['AI วิเคราะห์ข้อมูลซับซ้อนและแก้ปัญหาได้ดีขึ้น','AI ตัดสินใจและตอบสนองต่อเหตุการณ์ได้เร็วขึ้น','AI ให้ความสำคัญกับความปลอดภัยและลดความเสียหาย','AI อธิบายเหตุผลของการตัดสินใจได้ชัดเจน','AI ส่งต่อการตัดสินใจให้มนุษย์และยอมรับการแทรกแซง'];
-const AV=['https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=160&q=80','https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=160&q=80','https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=160&q=80','https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=160&q=80','https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=160&q=80','https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=160&q=80'];
+const AV=[
+ 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=160&q=80',
+ 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=160&q=80',
+ 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=160&q=80',
+ 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=160&q=80',
+ 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=160&q=80',
+ 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=160&q=80'
+];
 // img: ใส่ลิงก์รูปหรือพาธไฟล์ เช่น 'img/1.jpg' (ถ้าว่างหรือโหลดไม่ได้ จะโชว์ไอคอนแทน) · time: วินาที (ไม่ใส่ = 30)
 const SC=[
-{ic:'',img:'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=82',t:'AI Healthcare',w:[30,10,35,10,15],q:'ปี 2035 โรงพยาบาลมีผู้ป่วยฉุกเฉิน 3 คน แต่มีทรัพยากรรักษาเร่งด่วนเพียง 1 คน AI ต้องช่วยจัดลำดับความเร่งด่วน',
+{ic:'',img:'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',t:'AI Healthcare',w:[30,10,35,10,15],q:'ปี 2035 โรงพยาบาลมีผู้ป่วยฉุกเฉิน 3 คน แต่มีทรัพยากรรักษาเร่งด่วนเพียง 1 คน AI ต้องช่วยจัดลำดับความเร่งด่วน',
  o:{A:'ผู้ป่วย A — โอกาสรอด 90% · ความเร่งด่วนปานกลาง',B:'ผู้ป่วย B — โอกาสรอด 70% · ความเร่งด่วนสูง',C:'ผู้ป่วย C — โอกาสรอด 50% · วิกฤต'},
  p:{A:5,B:30,C:10},tw:'เซ็นเซอร์ของผู้ป่วย C ผิดพลาด โอกาสรอดจริงอาจเหลือเพียง 20% ขณะที่อาการผู้ป่วย B ทรุดลงเร็วมาก'},
-{ic:'',img:'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=82',t:'AI Financial Crisis',time:15,w:[30,35,15,10,10],q:'AI ตรวจพบสัญญาณว่าตลาดกำลังจะ Crash — มีเวลาตัดสินใจ 15 วินาที',
+{ic:'',img:'https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1200&q=80',t:'AI Financial Crisis',time:15,w:[30,35,15,10,10],q:'AI ตรวจพบสัญญาณว่าตลาดกำลังจะ Crash — มีเวลาตัดสินใจ 15 วินาที',
  o:{A:'ขายสินทรัพย์ทั้งหมด',B:'ไม่ทำอะไร',C:'ลดความเสี่ยงบางส่วน + ให้มนุษย์ตรวจสอบ'},
  p:{A:5,B:0,C:30},tw:'สัญญาณบางส่วนอาจเป็น false alarm ความมั่นใจของโมเดลลดจาก 85% เหลือ 55%'},
-{ic:'',img:'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=82',t:'AI Workplace Safety',time:20,w:[15,20,40,5,20],q:'Sensor ตรวจพบว่าคนงานกำลังเข้าใกล้พื้นที่ที่ Robot ทำงานผิดปกติ',
+{ic:'',img:'https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1200&q=80',t:'AI Workplace Safety',time:20,w:[15,20,40,5,20],q:'Sensor ตรวจพบว่าคนงานกำลังเข้าใกล้พื้นที่ที่ Robot ทำงานผิดปกติ',
  o:{A:'ปล่อยให้ Robot ทำงานต่อ',B:'หยุด Robot ทันที',C:'หยุด Robot + แจ้งเตือนคนงาน + ส่งให้มนุษย์ตรวจสอบ'},
  p:{A:5,B:20,C:30},tw:'Sensor ตัวหนึ่งทำงานผิดพลาด ความเสี่ยงจริงอาจสูงถึง 90% (จากเดิม 60%)'},
-{ic:'',img:'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=82',t:'AI Education',w:[25,10,10,30,25],q:'AI พบว่างานของนักศึกษาคนหนึ่งมีรูปแบบเหมือน AI Generated 95%',
+{ic:'',img:'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80',t:'AI Education',w:[25,10,10,30,25],q:'AI พบว่างานของนักศึกษาคนหนึ่งมีรูปแบบเหมือน AI Generated 95%',
  o:{A:'ให้ 0 คะแนนทันที',B:'แจ้งอาจารย์และให้อาจารย์ตรวจสอบ',C:'ถามนักศึกษาเพิ่มเติมและวิเคราะห์หลักฐานก่อน'},
  p:{A:0,B:20,C:30},tw:'นักศึกษาใช้เครื่องมือช่วยตรวจภาษาเพราะเรียนเป็นภาษาที่สอง ความมั่นใจของ AI detector ลดเหลือ 60%'},
-{ic:'',img:'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=82',t:'AI Self-Driving Car',time:15,w:[15,35,25,5,20],q:'รถไร้คนขับตรวจพบคนเดินข้ามถนนกะทันหันห่างไป 20 เมตร ขณะวิ่ง 60 กม./ชม.',
+{ic:'',img:'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80',t:'AI Self-Driving Car',time:15,w:[15,35,25,5,20],q:'รถไร้คนขับตรวจพบคนเดินข้ามถนนกะทันหันห่างไป 20 เมตร ขณะวิ่ง 60 กม./ชม.',
  o:{A:'เบรกฉุกเฉินเต็มแรงอย่างเดียว',B:'เบรก + หักหลบเข้าเลนข้าง',C:'เบรก + บีบแตร + เปิดไฟฉุกเฉิน + แจ้งผู้ควบคุมระยะไกล'},
  p:{A:10,B:5,C:30},tw:'เซ็นเซอร์ด้านหลังพบรถบรรทุกตามมาติดมาก และเลนข้างมีรถจักรยานยนต์วิ่งอยู่'},
-{ic:'',img:'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=82',t:'AI Hiring',w:[10,10,15,40,25],q:'AI คัดใบสมัครงาน 500 ใบ แต่พบว่าให้คะแนนผู้สมัครหญิงต่ำกว่าผู้สมัครชายอย่างผิดปกติ',
+{ic:'',img:'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80',t:'AI Hiring',w:[10,10,15,40,25],q:'AI คัดใบสมัครงาน 500 ใบ แต่พบว่าให้คะแนนผู้สมัครหญิงต่ำกว่าผู้สมัครชายอย่างผิดปกติ',
  o:{A:'ใช้ผลต่อไป เพราะแม่นยำเชิงสถิติ',B:'หยุดใช้ทั้งหมด ให้ HR คัดเอง',C:'ใช้ต่อ แต่ให้ HR ตรวจกลุ่มที่ถูกคัดออก และเปิดเผยเกณฑ์'},
  p:{A:0,B:15,C:30},tw:'ข้อมูลที่ใช้ฝึก AI เป็นประวัติพนักงาน 10 ปี ซึ่งส่วนใหญ่เป็นชาย และ HR มีแค่ 2 คน ต้องคัดให้เสร็จใน 2 วัน'},
-{ic:'',img:'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=82',t:'AI vs Deepfake',time:20,w:[20,25,15,20,20],q:'คลิปผู้บริหารบริษัทประกาศล้มละลายกำลังแพร่ในโซเชียล AI ประเมินว่าเป็น Deepfake 80%',
+{ic:'',img:'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80',t:'AI vs Deepfake',time:20,w:[20,25,15,20,20],q:'คลิปผู้บริหารบริษัทประกาศล้มละลายกำลังแพร่ในโซเชียล AI ประเมินว่าเป็น Deepfake 80%',
  o:{A:'ลบคลิปทันที',B:'ติดป้ายเตือน + ลดการเผยแพร่ + ส่งมนุษย์ตรวจสอบ',C:'ปล่อยไว้ก่อน รอข้อมูลเพิ่ม'},
  p:{A:10,B:30,C:0},tw:'ความมั่นใจลดเหลือ 55% เพราะอาจเป็นคลิปจริงที่ถูกตัดต่อบางส่วน และมีผู้ชมแล้ว 2 ล้านครั้ง'},
-{ic:'',img:'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=82',t:'AI Smart Grid',w:[20,25,30,5,20],q:'คลื่นความร้อนทำให้ไฟฟ้าของเมืองขาดแคลน 20% AI ต้องตัดสินใจเรื่องการจ่ายไฟ',
+{ic:'',img:'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80',t:'AI Smart Grid',w:[20,25,30,5,20],q:'คลื่นความร้อนทำให้ไฟฟ้าของเมืองขาดแคลน 20% AI ต้องตัดสินใจเรื่องการจ่ายไฟ',
  o:{A:'ตัดไฟหมุนเวียนทุกย่านเท่ากัน',B:'ตัดย่านที่ใช้ไฟน้อยที่สุดทันที',C:'ลดโหลดอัตโนมัติ ยกเว้นจุดสำคัญ + ให้ผู้ควบคุมอนุมัติ'},
  p:{A:15,B:10,C:30},tw:'ย่านที่ใช้ไฟน้อยมีผู้สูงอายุที่ใช้เครื่องช่วยหายใจที่บ้านจำนวนมาก'},
-{ic:'',img:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=82',t:'AI Loan Approval',w:[15,10,15,35,25],q:'AI ปฏิเสธสินเชื่อเกษตรกรรายหนึ่งด้วยคะแนนความเสี่ยงสูง แต่อธิบายเหตุผลไม่ได้',
+{ic:'',img:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80',t:'AI Loan Approval',w:[15,10,15,35,25],q:'AI ปฏิเสธสินเชื่อเกษตรกรรายหนึ่งด้วยคะแนนความเสี่ยงสูง แต่อธิบายเหตุผลไม่ได้',
  o:{A:'ปฏิเสธตามผล AI',B:'อนุมัติทันที',C:'ส่งเจ้าหน้าที่พิจารณาพร้อมรายงานปัจจัยที่ AI ใช้'},
  p:{A:5,B:10,C:30},tw:'เกษตรกรมีสัญญารับซื้อผลผลิตล่วงหน้า ซึ่งเป็นข้อมูลประเภทที่ AI ไม่เคยเห็นมาก่อน'},
-{ic:'',img:'https://images.unsplash.com/photo-1547683905-f686c993aae5?auto=format&fit=crop&w=1200&q=82',t:'AI Disaster Response',time:20,w:[20,35,15,5,25],q:'น้ำท่วมเฉียบพลัน โดรนมีแบตพอสำรวจได้เพียง 1 พื้นที่ ต้องเลือกว่าจะไปที่ไหนก่อน',
+{ic:'',img:'https://images.unsplash.com/photo-1547683905-f686c993aae5?auto=format&fit=crop&w=1200&q=80',t:'AI Disaster Response',time:20,w:[20,35,15,5,25],q:'น้ำท่วมเฉียบพลัน โดรนมีแบตพอสำรวจได้เพียง 1 พื้นที่ ต้องเลือกว่าจะไปที่ไหนก่อน',
  o:{A:'หมู่บ้านริมแม่น้ำ (ประชากรหนาแน่น)',B:'โรงเรียนบนเนิน (เด็ก 200 คน ส่งสัญญาณ SOS)',C:'โรงพยาบาลสนาม (ผู้ป่วยติดเตียง)'},
  p:{A:5,B:15,C:30},tw:'ได้รับรายงานว่าโรงเรียนอพยพแล้วด้วยรถบัส ส่วนโรงพยาบาลสนามไฟสำรองเหลือ 30 นาที'}];
 let db,uid,off=0,isHost=false,S={phase:'lobby',sc:0,step:'choose',code:''},T={},D={stats:[20,20,20,20,20],name:'',av:AV[0],sel:null,open:-1};
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const avatar=u=>u?`<img class="team-avatar" src="${esc(u)}" alt="AI" loading="lazy">`:'';
 const me=()=>T[uid],teams=()=>Object.values(T),now=()=>Date.now()+off,dur=i=>SC[i].time||30;
 function score(t,i){const s=SC[i],a=(t.ans||{})[i];if(!a)return{c:0,d:0,s:0,t:0};
  const raw=t.stats.reduce((x,v,j)=>x+v*s.w[j],0)/100,c=Math.round(70*Math.min(1,raw/Math.max(...s.w))),d=s.p[a.c2||a.c]||0;
@@ -99,44 +109,46 @@ async function setS(p){S={...S,...p};await db.ref('game/state').set(S)}
 const startQ=(i,step,sec)=>setS({phase:'play',sc:i,step,t0:now(),end:now()+sec*1000,dur:sec});
 async function saveMe(p){const t={...me(),...p};T[uid]=t;await db.ref('teams/'+uid).set(t);render()}
 function bars(t){return t.stats.map((v,i)=>`<div class="row"><span style="width:150px;font-size:14px">${ST[i]}</span><div class="bar"><i style="width:${v}%"></i></div><b style="width:30px;text-align:right">${v}</b></div>`).join('')}
-function board(){return `<div class="sc"><table><tr><th>ทีม</th>${SC.map((s,i)=>`<th>${i+1}</th>`).join('')}<th>รวม</th></tr>${ranked().map((t,k)=>`<tr><td>${k<3?'อันดับ '+(k+1):k+1+'.'} <img class="ai-avatar-sm" src="${esc(t.av)}" alt=""> ${esc(t.name)}</td>${SC.map((_,i)=>`<td>${done(i)?score(t,i).t:'–'}</td>`).join('')}<td><b>${total(t)}</b></td></tr>`).join('')}</table></div>`}
+function board(){return `<div class="sc"><table><tr><th>ทีม</th>${SC.map((s,i)=>`<th>${i+1}</th>`).join('')}<th>รวม</th></tr>${ranked().map((t,k)=>`<tr><td><div class="team-cell"><b>#${k+1}</b>${avatar(t.av)}<span>${esc(t.name)}</span></div></td>${SC.map((_,i)=>`<td>${done(i)?score(t,i).t:'–'}</td>`).join('')}<td><b>${total(t)}</b></td></tr>`).join('')}</table></div>`}
 function hostBar(){if(!isHost)return'';const n=teams().length,l=teams().filter(t=>t.locked).length,a=teams().filter(t=>(t.ans||{})[S.sc]).length,b=teams().filter(t=>((t.ans||{})[S.sc]||{}).c2).length;let h='';
- if(S.phase==='lobby')h=`<button class="big" ${n?'':'disabled'} onclick="setS({phase:'build'})">▶ START GAME</button>`;
- else if(S.phase==='build')h=`<p class="mu">ล็อก AI แล้ว ${l}/${n} ทีม</p><button class="big" ${l?'':'disabled'} onclick="setS({phase:'reveal'})">▶ BEGIN SIMULATION</button>`;
+ if(S.phase==='lobby')h=`<button class="big" ${n?'':'disabled'} onclick="setS({phase:'build'})">START GAME</button>`;
+ else if(S.phase==='build')h=`<p class="mu">ล็อก AI แล้ว ${l}/${n} ทีม</p><button class="big" ${l?'':'disabled'} onclick="setS({phase:'reveal'})">BEGIN SIMULATION</button>`;
  else if(S.phase==='reveal')h=`<button class="big" onclick="startQ(0,'choose',dur(0))">เริ่มข้อ 1</button>`;
- else if(S.phase==='play'){if(S.step==='choose')h=`<p class="mu">ตอบแล้ว ${a}/${n} ทีม</p><button class="big" onclick="startQ(S.sc,'twist',15)">เปิดช่วงตัดสินใจ</button>`;
+ else if(S.phase==='play'){if(S.step==='choose')h=`<p class="mu">ตอบแล้ว ${a}/${n} ทีม</p><button class="big" onclick="startQ(S.sc,'twist',15)">ดำเนินการต่อ</button>`;
   else if(S.step==='twist')h=`<p class="mu">ตอบรอบใหม่แล้ว ${b}/${n} ทีม</p><button class="big" onclick="setS({step:'result',end:0})">ดูผลคะแนน</button>`;
   else h=S.sc<SC.length-1?`<button class="big" onclick="startQ(S.sc+1,'choose',dur(S.sc+1))">ข้อถัดไป</button>`:`<button class="big" onclick="setS({phase:'final'})">ประกาศผล</button>`}
  return `<div class="card host"><span class="pill">HOST</span> <span class="mu">${n} ทีมเชื่อมต่อ</span>${h}<button class="g" style="margin-top:10px" onclick="resetGame()">รีเซ็ตเกม</button></div>`}
-async function resetGame(){if(!confirm('รีเซ็ตเกมและลบทุกทีม?'))return;await db.ref('teams').remove();T={};D={...D,stats:[20,20,20,20,20],sel:null};await setS({phase:'lobby',sc:0,step:'choose',end:0})}
-function lobby(){const m=me();return `<div class="card instructions"><h2>วิธีเล่น</h2><ol><li>ตั้งชื่อ AI ของทีม และเลือกภาพตัวแทนทีม</li><li>ก่อนเริ่มเกม คุณมี <b>100 AI Points</b> สำหรับแบ่งให้ 5 ความสามารถ: Intelligence, Speed, Safety, Explainability และ Human Control</li><li>จัดแต้มให้ครบ 100 แต้ม เพราะสัดส่วนที่คุณเลือกจะมีผลต่อคะแนนในสถานการณ์ต่าง ๆ</li><li>เมื่อเกมเริ่ม แต่ละทีมจะพบสถานการณ์จำลองจากโลกปี 2035 และต้องเลือกคำตอบภายในเวลาที่กำหนด</li><li>คะแนนมาจากทั้ง <b>ความเหมาะสมของ AI ที่สร้าง</b> และ <b>คุณภาพของการตัดสินใจ</b> รวมถึงความเร็วในการตอบ</li><li>มีทั้งหมด <b>${SC.length} สถานการณ์</b> จาก Healthcare, Finance, Workplace Safety, Education และเหตุการณ์สำคัญอื่น ๆ</li><li>เมื่อจบทุกสถานการณ์ ระบบจะรวมคะแนน จัดอันดับ และประกาศรางวัลพิเศษ</li></ol></div>`+`<div class="card c"><h2>ทีมที่เข้าร่วม</h2><div class="team-list">${teams().map(t=>`<div class="team-chip"><img class="ai-avatar-sm" src="${esc(t.av)}" alt=""><b>${esc(t.name)}</b></div>`).join('')||'<p class="mu">ยังไม่มีทีมเข้าร่วม</p>'}</div></div>`+(isHost?'':m?`<div class="card c"><h2><img class="ai-avatar" src="${esc(m.av)}" alt=""> ${esc(m.name)}</h2><p class="mu">เข้าร่วมแล้ว — รอ Host กด START GAME</p></div>`:`<div class="card"><h2>ตั้งชื่อ AI ของทีม</h2><input id="nm" placeholder="เช่น NOVA-X, ORION" maxlength="16" value="${esc(D.name)}" oninput="D.name=this.value"><p class="mu">เลือกภาพตัวแทนทีม</p><div class="av">${AV.map(a=>`<button class="${D.av===a?'on':''}" onclick="D.av='${a}';render()"><img class="ai-avatar" src="${a}" alt=""></button>`).join('')}</div><button class="big" style="margin-top:14px" onclick="join()">JOIN GAME</button></div>`)}
-} 
+async function resetGame(){if(!confirm('รีเซ็ตเกมและลบทุกทีม?'))return;await db.ref('teams').remove();T={};D={...D,stats:[20,20,20,20,20],sel:null};await setS({phase:'lobby',sc:0,step:'choose',end:0,code:Math.random().toString(36).slice(2,7).toUpperCase()})}
+function lobby(){const m=me();return `<div class="card howto"><h2>วิธีการเล่น</h2><ol><li>ตั้งชื่อ AI ของทีมและเลือกภาพตัวแทน</li><li>จัดสรร 100 AI Points ให้กับ Intelligence, Speed, Safety, Explainability และ Human Control</li><li>เมื่อเริ่มเกม คุณจะพบสถานการณ์จำลองจากโลกปี 2035</li><li>อ่านข้อมูลของแต่ละสถานการณ์ วิเคราะห์ข้อจำกัด และเลือกการตัดสินใจที่เหมาะกับ AI ของคุณภายในเวลาที่กำหนด</li><li>คะแนนคำนวณจากความเหมาะสมของ AI ที่สร้าง คุณภาพการตัดสินใจ และความเร็วในการตอบ</li><li>เล่นให้ครบ ${SC.length} สถานการณ์ แล้วดูคะแนนรวมและอันดับของทีม</li></ol></div>`+
+ `<div class="card c"><div class="mu">ทีมที่เข้าร่วม</div><div style="font-size:36px;font-weight:800;color:var(--ac2)">${teams().length}</div></div>`+
+ (isHost?'':m?`<div class="card c"><h2>${avatar(m.av)} ${esc(m.name)}</h2><p class="mu">เข้าร่วมแล้ว — รอ Host เริ่มเกม</p></div>`:
+ `<div class="card"><h2>ตั้งชื่อ AI ของทีม</h2><input id="nm" placeholder="เช่น NOVA-X, ORION" maxlength="16" value="${esc(D.name)}" oninput="D.name=this.value"><p class="mu">เลือกภาพตัวแทน</p><div class="av">${AV.map((a,i)=>`<button class="${D.av===a?'on':''}" onclick="D.av='${a}';render()"><img class="avatar-img" src="${a}" alt="AI ${i+1}" loading="lazy"></button>`).join('')}</div><button class="big" style="margin-top:14px" onclick="join()">JOIN GAME</button></div>`)}
 function join(){const n=D.name.trim();if(!n)return alert('ตั้งชื่อ AI ก่อน');saveMe({name:n,av:D.av,stats:[20,20,20,20,20],locked:false,ans:{}})}
-function build(){const m=me();if(isHost)return `<div class="card"><h2>ทีมกำลังสร้าง AI</h2>${teams().map(t=>`<div class="row">${esc(t.av)} ${esc(t.name)} <span class="pill">${t.locked?'🔒 LOCKED':'กำลังจัดแต้ม…'}</span></div>`).join('')||'<p class="mu">ยังไม่มีทีม</p>'}</div>`;
+function build(){const m=me();if(isHost)return `<div class="card"><h2>ทีมกำลังสร้าง AI</h2>${teams().map(t=>`<div class="row">${avatar(t.av)}<span style="flex:1">${esc(t.name)}</span><span class="pill">${t.locked?'LOCKED':'กำลังจัดแต้ม…'}</span></div>`).join('')||'<p class="mu">ยังไม่มีทีม</p>'}</div>`;
  if(!m)return `<div class="card c">เกมเริ่มแล้ว — กรุณารอรอบถัดไป หรือให้ Host รีเซ็ต</div>`;
  if(m.locked)return `<div class="card c"><h2>AI ถูกล็อกแล้ว</h2><p class="mu">รอทีมอื่นและ Host เริ่ม Simulation</p>${bars(m)}</div>`;
  const rem=100-D.stats.reduce((a,b)=>a+b,0);
- return `<div class="card c"><h2>BUILD YOUR AI</h2><div class="code" style="font-size:40px;letter-spacing:0;color:${rem<0?'var(--ac)':'var(--ac2)'}">${rem}</div><div class="mu">Remaining PTS</div></div><div class="card">${ST.map((s,i)=>`<div class="row"><span style="flex:1;cursor:pointer" onclick="D.open=D.open===${i}?-1:${i};render()">${s}</span><button class="g" onclick="adj(${i},-5)">−</button><span class="n">${D.stats[i]}</span><button onclick="adj(${i},5)">+</button></div>${D.open===i?`<div class="mu" style="margin:-4px 0 6px">💡 ${DS[i]}</div>`:''}`).join('')}<p class="mu">แตะชื่อความสามารถเพื่อดูคำอธิบาย · ครั้งละ 5 แต้ม · ไม่มี Build ที่ดีที่สุด</p><button class="big" ${rem===0?'':'disabled'} onclick="saveMe({stats:D.stats,locked:true})">LOCK AI</button></div>`}
+ return `<div class="card c"><h2>BUILD YOUR AI</h2><div class="code" style="font-size:40px;letter-spacing:0;color:${rem<0?'var(--ac)':'var(--ac2)'}">${rem}</div><div class="mu">Remaining PTS</div></div><div class="card">${ST.map((s,i)=>`<div class="row"><span style="flex:1;cursor:pointer" onclick="D.open=D.open===${i}?-1:${i};render()">${s}</span><button class="g" onclick="adj(${i},-5)">−</button><span class="n">${D.stats[i]}</span><button onclick="adj(${i},5)">+</button></div>${D.open===i?`<div class="mu" style="margin:-4px 0 6px">${DS[i]}</div>`:''}`).join('')}<p class="mu">แตะชื่อความสามารถเพื่อดูคำอธิบาย · ครั้งละ 5 แต้ม · ไม่มี Build ที่ดีที่สุด</p><button class="big" ${rem===0?'':'disabled'} onclick="saveMe({stats:D.stats,locked:true})">LOCK AI</button></div>`}
 function adj(i,d){const v=D.stats[i]+d,rem=100-D.stats.reduce((a,b)=>a+b,0);if(v<0||(d>0&&rem<d))return;D.stats[i]=v;render()}
 function reveal(){return teams().map(t=>`<div class="card"><h2>${esc(t.av)} ${esc(t.name)}</h2>${bars(t)}</div>`).join('')}
 function timer(){const r=Math.max(0,(S.end-now())/1000);return `<div class="tmr"><b id="tn">${Math.ceil(r)}</b><div class="bar"><i id="tb" style="width:${Math.min(100,r/S.dur*100)}%"></i></div></div>`}
 function play(){const s=SC[S.sc],m=me(),a=m&&(m.ans||{})[S.sc],tw=S.step==='twist',res=S.step==='result';
- let h=`<div class="card"><span class="pill">ข้อ ${S.sc+1}/${SC.length}</span>${res?'':timer()}<div class="pic">${s.img?`<img src="${esc(s.img)}" alt="${esc(s.t)}" onerror="this.remove()">`:``}<span class="fallback">${s.img?'':esc(s.t)}</span></div><h2>${s.t}</h2><p>${s.q}</p>`;
+ let h=`<div class="card"><span class="pill">ข้อ ${S.sc+1}/${SC.length}</span>${res?'':timer()}<div class="pic">${s.img?`<img src="${esc(s.img)}" alt="${esc(s.t)}" onerror="this.remove()">`:''}</div><h2>${s.t}</h2><p>${s.q}</p>`;
  if(res){return h+'</div><div class="card"><h2>ผลคะแนนข้อนี้</h2><div class="sc"><table><tr><th>ทีม</th><th>เลือก</th><th>AI</th><th>ตัดสินใจ</th><th>เร็ว</th><th>รวม</th></tr>'+teams().map(t=>{const x=score(t,S.sc),a=(t.ans||{})[S.sc]||{};return `<tr><td>${esc(t.av)} ${esc(t.name)}</td><td>${a.c2||a.c||'–'}</td><td>${x.c}</td><td>${x.d}</td><td>+${x.s}</td><td><b>${x.t}</b></td></tr>`}).join('')+`</table></div></div><div class="card">${board()}</div>`}
- if(tw)h+=`<div class="card tw" style="margin:0 0 10px;box-shadow:3px 3px 0 var(--ink)">🚨 <b>สถานการณ์เร่งด่วน!</b><br>${s.tw}<br><b>เปลี่ยนการตัดสินใจหรือไม่?</b></div>`;
+ if(tw)h+=`<div class="card tw" style="margin:0 0 10px;box-shadow:3px 3px 0 var(--ink)"><b>ข้อมูลใหม่</b><br>${s.tw}<br><b>เปลี่ยนการตัดสินใจหรือไม่?</b></div>`;
  if(isHost)return h+Object.entries(s.o).map(([k,v])=>`<div class="opt" style="padding:10px;border:2px solid var(--ink);border-radius:10px"><b>${k}</b> ${v}</div>`).join('')+'</div>';
  if(!m)return h+'</div>';
  const cur=D.sel??(tw?(a&&(a.c2||a.c)):a&&a.c),locked=!tw&&a,wait=tw&&a&&a.c2,over=now()>S.end;
  h+=Object.entries(s.o).map(([k,v])=>`<button class="opt ${cur===k?'on':''}" ${locked||wait||over?'disabled':''} onclick="D.sel='${k}';render()"><b>${k}</b> ${v}</button>`).join('');
- if(locked||wait)return h+`<p class="c mu">✅ ส่งคำตอบแล้ว — รอ Host</p></div>`;
+ if(locked||wait)return h+`<p class="c mu">ส่งคำตอบแล้ว — รอ Host</p></div>`;
  if(over)return h+`<p class="c"><b>หมดเวลา</b></p></div>`;
  return h+`<button class="big" style="margin-top:10px" ${cur?'':'disabled'} onclick="submit(${tw})">ส่งคำตอบ</button></div>`}
 function submit(tw){if(now()>S.end+500)return alert('หมดเวลาแล้ว');const ans={...(me().ans||{})},a=ans[S.sc]||{};if(tw)a.c2=D.sel||a.c;else{a.c=D.sel;a.t1=now()-S.t0}ans[S.sc]=a;D.sel=null;saveMe({ans})}
 function final(){const r=ranked(),t=teams(),mx=k=>{const m=Math.max(...t.map(x=>x.stats[k]));return t.filter(x=>x.stats[k]===m)};
- const aw=[['🧠 Smartest AI',mx(0)],['🛡️ Safest AI',mx(2)],['🤝 Best Human-AI Collaboration',mx(4)]];
- return `<div class="card c"><h2>AI OF 2035</h2>${r.slice(0,3).map((x,k)=>`<div style="font-size:${26-k*3}px">อันดับ ${k+1} <img class="ai-avatar-sm" src="${esc(x.av)}" alt=""> <b>${esc(x.name)}</b> — ${total(x)}</div>`).join('')}</div><div class="card">${board()}</div>
- <div class="card">${aw.map(([n,x])=>`<div class="row"><b style="flex:1">${n}</b><span>${x.map(y=>esc(y.av)+' '+esc(y.name)).join(', ')}</span></div>`).join('')}</div>
- <div class="card"><h2>เกณฑ์การให้คะแนน</h2><ul><li><b>คะแนน AI (สูงสุด 70)</b> — ค่าความสามารถที่คุณจัดสรรไว้ ตรงกับสิ่งที่สถานการณ์นั้นต้องการมากแค่ไหน</li><li><b>คะแนนตัดสินใจ (สูงสุด 30)</b> — วัดจากตัวเลือกสุดท้ายหลังสถานการณ์เร่งด่วน</li><li><b>คะแนนความเร็ว (สูงสุด 5)</b> — ตอบเร็วสุดได้ 5 เร็วรองลงมาได้ 4, 3, 2, 1 ตามลำดับ</li><li>รวมสูงสุดข้อละ 105 คะแนน · ทั้งหมด ${SC.length} ข้อ</li><li>รางวัลพิเศษ 3 แบบ ตัดสินจากค่าความสามารถที่ตั้งไว้ ไม่ใช่จากคะแนนรวม</li></ul></div>
+ const aw=[['Smartest AI',mx(0)],['Safest AI',mx(2)],['Best Human-AI Collaboration',mx(4)]];
+ return `<div class="card c"><h2>AI OF 2035</h2>${r.slice(0,3).map((x,k)=>`<div style="font-size:${26-k*3}px"><b>#${k+1}</b> ${avatar(x.av)} <b>${esc(x.name)}</b> — ${total(x)}</div>`).join('')}</div><div class="card">${board()}</div>
+ <div class="card">${aw.map(([n,x])=>`<div class="row"><b style="flex:1">${n}</b><span>${x.map(y=>avatar(y.av)+' '+esc(y.name)).join(', ')}</span></div>`).join('')}</div>
+ <div class="card"><h2>เกณฑ์การให้คะแนน</h2><ul><li><b>คะแนน AI (สูงสุด 70)</b> — ค่าความสามารถที่คุณจัดสรรไว้ ตรงกับสิ่งที่สถานการณ์นั้นต้องการมากแค่ไหน</li><li><b>คะแนนตัดสินใจ (สูงสุด 30)</b> — วัดจากตัวเลือกสุดท้ายหลังข้อมูลใหม่</li><li><b>คะแนนความเร็ว (สูงสุด 5)</b> — ตอบเร็วสุดได้ 5 เร็วรองลงมาได้ 4, 3, 2, 1 ตามลำดับ</li><li>รวมสูงสุดข้อละ 105 คะแนน · ทั้งหมด ${SC.length} ข้อ</li><li>รางวัลพิเศษ 3 แบบ ตัดสินจากค่าความสามารถที่ตั้งไว้ ไม่ใช่จากคะแนนรวม</li></ul></div>
  <div class="card c"><h2>THE FUTURE IS NOT ABOUT AI REPLACING HUMANS</h2><p>It's about how humans choose to build and control AI.</p><p class="mu">“AI ที่ดีที่สุดในปี 2035 อาจไม่ใช่ AI ที่ฉลาดที่สุด แต่คือ AI ที่สมดุลระหว่าง Intelligence, Safety และ Human Control”</p></div>`}
 function render(){const el=$('#app');if(!db){el.innerHTML='<h1>CREATE YOUR AI<br>2035</h1><div class="card c">ยังไม่ได้ตั้งค่า Firebase</div>';return}
  const f=document.activeElement,id=f&&f.id,pos=f&&f.selectionStart;
@@ -150,7 +162,7 @@ firebase.initializeApp(FB);db=firebase.database();
 db.ref('.info/serverTimeOffset').on('value',x=>off=x.val()||0);
 isHost=location.hash==='#host';
 uid=localStorage.getItem('uid')||('u'+Math.random().toString(36).slice(2,10));localStorage.setItem('uid',uid);
-db.ref('game/state').on('value',x=>{const v=x.val();if(v){S=v;if(S.phase==='play'&&D.k!==S.sc+S.step){D.k=S.sc+S.step;D.sel=null}}else if(isHost){db.ref('game/state').set(S)}render()});
+db.ref('game/state').on('value',x=>{const v=x.val();if(v){S=v;if(S.phase==='play'&&D.k!==S.sc+S.step){D.k=S.sc+S.step;D.sel=null}}else if(isHost){S.code=Math.random().toString(36).slice(2,7).toUpperCase();db.ref('game/state').set(S)}render()});
 db.ref('teams').on('value',x=>{T=x.val()||{};render()});}catch(e){console.error(e);render()}})();
 render();
 </script></body></html>
