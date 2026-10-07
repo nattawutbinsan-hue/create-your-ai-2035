@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CREATE YOUR AI: 2035</title>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f1f4fb;--fg:#0f1830;--card:#fff;--ac:#0a6cff;--ac2:#00a88f;--mu:#62708f;--bd:#d6ddee;--bad:#e5484d}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#080d1c;--fg:#e8edff;--card:#121a33;--ac:#4d9bff;--ac2:#2ee6c5;--mu:#8e9bc4;--bd:#243058}}
+:root[data-theme=dark]{--bg:#080d1c;--fg:#e8edff;--card:#121a33;--ac:#4d9bff;--ac2:#2ee6c5;--mu:#8e9bc4;--bd:#243058}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Sarabun","Noto Sans Thai",sans-serif}
+#app{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:30px;letter-spacing:2px;margin:8px 0;text-align:center}
+h2{margin:4px 0 10px;font-size:20px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:16px;margin:12px 0}
+.c{text-align:center}.mu{color:var(--mu);font-size:14px}
+.code{font-size:44px;font-weight:800;letter-spacing:8px;color:var(--ac)}
+button{font:inherit;border:0;border-radius:12px;padding:12px 18px;background:var(--ac);color:#fff;font-weight:700;cursor:pointer}
+button.g{background:transparent;color:var(--fg);border:1px solid var(--bd)}
+button:disabled{opacity:.4;cursor:default}
+button.big{width:100%;padding:16px;font-size:18px}
+input,textarea{font:inherit;width:100%;padding:12px;border-radius:12px;border:1px solid var(--bd);background:var(--bg);color:var(--fg)}
+.row{display:flex;align-items:center;gap:10px;margin:8px 0}
+.row .n{width:44px;text-align:center;font-weight:800;font-size:20px}
+.row button{width:44px;padding:8px}
+.bar{height:14px;border-radius:7px;background:var(--bd);overflow:hidden;flex:1}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--ac2))}
+.av{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.av button{font-size:26px;padding:6px 10px;background:transparent;border:2px solid var(--bd)}
+.av button.on{border-color:var(--ac)}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;background:var(--bg);color:var(--fg);border:2px solid var(--bd);font-weight:500}
+.opt.on{border-color:var(--ac);background:color-mix(in srgb,var(--ac) 14%,transparent)}
+.tw{border:2px solid var(--bad);background:color-mix(in srgb,var(--bad) 10%,transparent)}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px 4px;text-align:center;border-bottom:1px solid var(--bd)}td:first-child,th:first-child{text-align:left}
+.host{border:2px dashed var(--ac)}
+.pill{display:inline-block;padding:2px 10px;border-radius:99px;background:var(--bd);font-size:13px}
+</style></head><body><div id="app">กำลังโหลด…</div>
+<script>
+// === วาง Firebase config ของคุณตรงนี้ (ดูวิธีใน README) ===
+const FB={apiKey:'PASTE_API_KEY',authDomain:'PASTE.firebaseapp.com',databaseURL:'https://PASTE-default-rtdb.firebaseio.com',projectId:'PASTE',appId:'PASTE'};
+const ST=['🧠 Intelligence','⚡ Speed','🔒 Safety','👁️ Explainability','🤝 Human Control'];
+const DS=['AI วิเคราะห์ข้อมูลซับซ้อนและแก้ปัญหาได้ดีขึ้น','AI ตัดสินใจและตอบสนองต่อเหตุการณ์ได้เร็วขึ้น','AI ให้ความสำคัญกับความปลอดภัยและลดความเสียหาย','AI อธิบายเหตุผลของการตัดสินใจได้ชัดเจน','AI ส่งต่อการตัดสินใจให้มนุษย์และยอมรับการแทรกแซง'];
+const AV=['🤖','🧬','🛰️','🦾','👾','🔮'];
+const SC=[
+{ic:'🏥',t:'AI Healthcare',w:[30,10,35,10,15],q:'ปี 2035 โรงพยาบาลมีผู้ป่วยฉุกเฉิน 3 คน แต่มีทรัพยากรรักษาเร่งด่วนเพียง 1 คน AI ต้องช่วยจัดลำดับความเร่งด่วน',
+ o:{A:'ผู้ป่วย A — โอกาสรอด 90% · ความเร่งด่วนปานกลาง',B:'ผู้ป่วย B — โอกาสรอด 70% · ความเร่งด่วนสูง',C:'ผู้ป่วย C — โอกาสรอด 50% · วิกฤต'},
+ p:{A:5,B:24,C:30},tw:'⚠️ เซ็นเซอร์ของผู้ป่วย C ผิดพลาด โอกาสรอดจริงอาจเหลือเพียง 20% ขณะที่อาการผู้ป่วย B ทรุดลงเร็วมาก',best:'B'},
+{ic:'💹',t:'AI Financial Crisis',w:[30,35,15,10,10],q:'AI ตรวจพบสัญญาณว่าตลาดกำลังจะ Crash — มีเวลาตัดสินใจ 15 วินาที',
+ o:{A:'ขายสินทรัพย์ทั้งหมด',B:'ไม่ทำอะไร',C:'ลดความเสี่ยงบางส่วน + ให้มนุษย์ตรวจสอบ'},
+ p:{A:5,B:0,C:30},tw:'⚠️ สัญญาณบางส่วนอาจเป็น false alarm ความมั่นใจของโมเดลลดจาก 85% เหลือ 55%',best:'C'},
+{ic:'🏭',t:'AI Workplace Safety',w:[15,20,40,5,20],q:'Sensor ตรวจพบว่าคนงานกำลังเข้าใกล้พื้นที่ที่ Robot ทำงานผิดปกติ',
+ o:{A:'ปล่อยให้ Robot ทำงานต่อ',B:'หยุด Robot ทันที',C:'หยุด Robot + แจ้งเตือนคนงาน + ส่งให้มนุษย์ตรวจสอบ'},
+ p:{A:5,B:20,C:30},tw:'⚠️ Sensor ตัวหนึ่งทำงานผิดพลาด ความเสี่ยงจริงอาจสูงถึง 90% (จากเดิม 60%)',best:'C'},
+{ic:'🎓',t:'AI Education',w:[25,10,10,30,25],q:'AI พบว่างานของนักศึกษาคนหนึ่งมีรูปแบบเหมือน AI Generated 95%',
+ o:{A:'ให้ 0 คะแนนทันที',B:'แจ้งอาจารย์และให้อาจารย์ตรวจสอบ',C:'ถามนักศึกษาเพิ่มเติมและวิเคราะห์หลักฐานก่อน'},
+ p:{A:0,B:20,C:30},tw:'⚠️ ตรวจพบว่านักศึกษาใช้เครื่องมือช่วยตรวจภาษาเพราะเรียนเป็นภาษาที่สอง ความมั่นใจของ AI detector ลดเหลือ 60%',best:'C'}];
+let db,uid,isHost=false,S={phase:'lobby',sc:0,step:'choose',code:''},T={},D={stats:[20,20,20,20,20],name:'',av:'🤖',why:'',sel:null,open:-1};
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const me=()=>T[uid],teams=()=>Object.values(T);
+function score(t,i){const s=SC[i],a=(t.ans||{})[i];if(!a)return{c:0,d:0,b:0,t:0};
+ const raw=t.stats.reduce((x,v,j)=>x+v*s.w[j],0)/100,c=Math.round(70*Math.min(1,raw/Math.max(...s.w))),f=a.c2||a.c,d=s.p[f]||0;let b=0;
+ if(a.c2&&a.c2!==a.c&&a.c2===s.best)b+=10;else if(a.c2&&a.c2===a.c&&a.c===s.best)b+=5;
+ if((a.w||'').length>=15)b+=3+Math.min(2,Math.round(t.stats[3]/10));
+ return{c,d,b,t:c+d+b}}
+const done=i=>S.phase==='final'||i<S.sc||(i===S.sc&&S.step==='result');
+function total(t){let x=0;SC.forEach((_,i)=>{if(done(i))x+=score(t,i).t});return x}
+const ranked=()=>teams().sort((a,b)=>total(b)-total(a));
+async function setS(p){S={...S,...p};await db.ref('game/state').set(S)}
+async function saveMe(p){const t={...me(),...p};T[uid]=t;await db.ref('teams/'+uid).set(t);render()}
+function bars(t){return t.stats.map((v,i)=>`<div class="row"><span style="width:150px;font-size:14px">${ST[i]}</span><div class="bar"><i style="width:${v}%"></i></div><b style="width:30px;text-align:right">${v}</b></div>`).join('')}
+function board(){const r=ranked(),n=SC.filter((_,i)=>done(i));
+ return `<table><tr><th>ทีม</th>${SC.map((s,i)=>`<th>${s.ic}</th>`).join('')}<th>รวม</th></tr>${r.map((t,k)=>`<tr><td>${['🥇','🥈','🥉'][k]||k+1+'.'} ${esc(t.av)} ${esc(t.name)}</td>${SC.map((_,i)=>`<td>${done(i)?score(t,i).t:'–'}</td>`).join('')}<td><b>${total(t)}</b></td></tr>`).join('')}</table>`}
+function hostBar(){if(!isHost)return'';const n=teams().length,l=teams().filter(t=>t.locked).length,a=teams().filter(t=>(t.ans||{})[S.sc]).length,b=teams().filter(t=>((t.ans||{})[S.sc]||{}).c2).length;let h='';
+ if(S.phase==='lobby')h=`<button class="big" ${n?'':'disabled'} onclick="setS({phase:'build'})">▶ START GAME</button>`;
+ else if(S.phase==='build')h=`<p class="mu">ล็อก AI แล้ว ${l}/${n} ทีม</p><button class="big" ${l?'':'disabled'} onclick="setS({phase:'reveal'})">▶ BEGIN SIMULATION</button>`;
+ else if(S.phase==='reveal')h=`<button class="big" onclick="setS({phase:'play',sc:0,step:'choose'})">▶ เริ่ม Scenario 1</button>`;
+ else if(S.phase==='play'){if(S.step==='choose')h=`<p class="mu">ตอบแล้ว ${a}/${n} ทีม</p><button class="big" onclick="setS({step:'twist'})">🚨 NEW INFORMATION</button>`;
+  else if(S.step==='twist')h=`<p class="mu">ตอบรอบใหม่แล้ว ${b}/${n} ทีม</p><button class="big" onclick="setS({step:'result'})">📊 ดูผลคะแนน</button>`;
+  else h=S.sc<3?`<button class="big" onclick="setS({sc:S.sc+1,step:'choose'})">▶ Scenario ถัดไป</button>`:`<button class="big" onclick="setS({phase:'final'})">🏆 ประกาศผล</button>`}
+ return `<div class="card host"><span class="pill">HOST</span> <span class="mu">${n} ทีมเชื่อมต่อ</span>${h}<button class="g" style="margin-top:10px" onclick="resetGame()">รีเซ็ตเกม</button></div>`}
+async function resetGame(){if(!confirm('รีเซ็ตเกมและลบทุกทีม?'))return;await db.ref('teams').remove();T={};D={...D,stats:[20,20,20,20,20],why:'',sel:null};await setS({phase:'lobby',sc:0,step:'choose',code:Math.random().toString(36).slice(2,7).toUpperCase()})}
+function lobby(){const m=me();return `<div class="card c"><div class="mu">ROOM CODE</div><div class="code">${esc(S.code)}</div><div>👥 ${teams().length} Teams Connected</div></div>`+
+ (isHost?'':m?`<div class="card c"><h2>${esc(m.av)} ${esc(m.name)}</h2><p class="mu">เข้าร่วมแล้ว — รอ Host กด START GAME</p></div>`:
+ `<div class="card"><h2>👥 ตั้งชื่อ AI ของทีม</h2><input id="nm" placeholder="เช่น NOVA-X, ORION" maxlength="16" value="${esc(D.name)}" oninput="D.name=this.value"><p class="mu">เลือก Avatar</p><div class="av">${AV.map(a=>`<button class="${D.av===a?'on':''}" onclick="D.av='${a}';render()">${a}</button>`).join('')}</div><button class="big" style="margin-top:14px" onclick="join()">JOIN GAME</button></div>`)}
+function join(){const n=D.name.trim();if(!n)return alert('ตั้งชื่อ AI ก่อน');saveMe({name:n,av:D.av,stats:[20,20,20,20,20],locked:false,ans:{}})}
+function build(){const m=me();if(isHost)return `<div class="card"><h2>🧠 ทีมกำลังสร้าง AI</h2>${teams().map(t=>`<div class="row">${esc(t.av)} ${esc(t.name)} <span class="pill">${t.locked?'🔒 LOCKED':'กำลังจัดแต้ม…'}</span></div>`).join('')||'<p class="mu">ยังไม่มีทีม</p>'}</div>`;
+ if(!m)return `<div class="card c">เกมเริ่มแล้ว — กรุณารอรอบถัดไป หรือให้ Host รีเซ็ต</div>`;
+ if(m.locked)return `<div class="card c"><h2>🔒 AI ถูกล็อกแล้ว</h2><p class="mu">รอทีมอื่นและ Host เริ่ม Simulation</p>${bars(m)}</div>`;
+ const rem=100-D.stats.reduce((a,b)=>a+b,0);
+ return `<div class="card c"><h2>BUILD YOUR AI</h2><div class="code" style="font-size:40px;letter-spacing:0;color:${rem<0?'var(--bad)':'var(--ac)'}">${rem}</div><div class="mu">Remaining PTS</div></div><div class="card">${ST.map((s,i)=>`<div class="row"><span style="flex:1;cursor:pointer" onclick="D.open=D.open===${i}?-1:${i};render()">${s}</span><button class="g" onclick="adj(${i},-5)">−</button><span class="n">${D.stats[i]}</span><button onclick="adj(${i},5)">+</button></div>${D.open===i?`<div class="mu" style="margin:-4px 0 6px">💡 ${DS[i]}</div>`:''}`).join('')}<p class="mu">แตะชื่อความสามารถเพื่อดูคำอธิบาย · ครั้งละ 5 แต้ม · ไม่มี Build ที่ดีที่สุด</p><button class="big" ${rem===0?'':'disabled'} onclick="saveMe({stats:D.stats,locked:true})">🔒 LOCK AI</button></div>`}
+function adj(i,d){const v=D.stats[i]+d,rem=100-D.stats.reduce((a,b)=>a+b,0);if(v<0||(d>0&&rem<d))return;D.stats[i]=v;render()}
+function reveal(){return teams().map(t=>`<div class="card"><h2>${esc(t.av)} ${esc(t.name)}</h2>${bars(t)}</div>`).join('')}
+function play(){const s=SC[S.sc],m=me(),a=m&&(m.ans||{})[S.sc];
+ let h=`<div class="card"><span class="pill">SCENARIO ${S.sc+1}/4</span><h2>${s.ic} ${s.t}</h2><p>${s.q}</p>`;
+ if(S.step==='result'){h+='</div><div class="card"><h2>📊 ผลคะแนน Scenario นี้</h2><table><tr><th>ทีม</th><th>เลือก</th><th>AI</th><th>ตัดสินใจ</th><th>โบนัส</th><th>รวม</th></tr>'+teams().map(t=>{const x=score(t,S.sc),a=(t.ans||{})[S.sc]||{};return `<tr><td>${esc(t.av)} ${esc(t.name)}</td><td>${a.c2||a.c||'–'}</td><td>${x.c}</td><td>${x.d}</td><td>+${x.b}</td><td><b>${x.t}</b></td></tr>`}).join('')+`</table><p class="mu">โบนัส = Adaptability (ปรับตัวเมื่อมีข้อมูลใหม่) + เหตุผล</p></div><div class="card">${board()}</div>`;return h}
+ const tw=S.step==='twist';
+ if(tw)h+=`<div class="card tw" style="margin:0 0 10px">🚨 NEW INFORMATION<br>${s.tw}<br><b>เปลี่ยนการตัดสินใจหรือไม่?</b></div>`;
+ if(isHost)return h+Object.entries(s.o).map(([k,v])=>`<div class="opt" style="padding:10px;border-radius:12px"><b>${k}</b> ${v}</div>`).join('')+'</div>';
+ if(!m)return h+'</div>';
+ const cur=D.sel??(tw?(a&&(a.c2||a.c)):a&&a.c),locked=!tw&&a,wait=tw&&a&&a.c2;
+ h+=Object.entries(s.o).map(([k,v])=>`<button class="opt ${cur===k?'on':''}" ${locked||wait?'disabled':''} onclick="D.sel='${k}';render()"><b>${k}</b> ${v}</button>`).join('');
+ if(locked||wait)return h+`<p class="c mu">✅ ส่งคำตอบแล้ว — รอ Host</p></div>`;
+ return h+(tw?'':`<p class="mu">Why did your AI make this decision? (≤100 ตัวอักษร)</p><textarea id="why" rows="2" maxlength="100" oninput="D.why=this.value">${esc(D.why)}</textarea>`)+`<button class="big" style="margin-top:10px" ${cur?'':'disabled'} onclick="submit(${tw})">ส่งคำตอบ</button></div>`}
+function submit(tw){const ans={...(me().ans||{})},a=ans[S.sc]||{};if(tw)a.c2=D.sel||a.c;else{a.c=D.sel;a.w=D.why.trim()}ans[S.sc]=a;D.sel=null;if(!tw)D.why='';saveMe({ans})}
+function final(){const r=ranked(),t=teams(),mx=k=>t.slice().sort((a,b)=>b.stats[k]-a.stats[k])[0];
+ const aw=[['🧠 Smartest AI',mx(0)],['🛡️ Safest AI',mx(2)],['🤝 Best Human-AI Collaboration',mx(4)]];
+ return `<div class="card c"><h2>🏆 AI OF 2035</h2>${r.slice(0,3).map((x,k)=>`<div style="font-size:${26-k*3}px">${['🥇','🥈','🥉'][k]} ${esc(x.av)} <b>${esc(x.name)}</b> — ${total(x)}</div>`).join('')}</div><div class="card">${board()}</div>
+ <div class="card">${aw.map(([n,x])=>x?`<div class="row"><b style="flex:1">${n}</b>${esc(x.av)} ${esc(x.name)}</div>`:'').join('')}</div>
+ <div class="card c"><h2>THE FUTURE IS NOT ABOUT AI REPLACING HUMANS</h2><p>It's about how humans choose to build and control AI.</p><p class="mu">“AI ที่ดีที่สุดในปี 2035 อาจไม่ใช่ AI ที่ฉลาดที่สุด แต่คือ AI ที่สมดุลระหว่าง Intelligence, Safety และ Human Control”</p></div>`}
+function render(){const el=$('#app');if(!db){el.innerHTML='<h1>CREATE YOUR AI<br>2035</h1><div class="card c">ยังไม่ได้ตั้งค่า Firebase — แก้ค่า FB ในไฟล์ index.html ก่อน</div>';return}
+ const f=document.activeElement,id=f&&f.id,pos=f&&f.selectionStart;
+ const body={lobby:lobby,build:build,reveal:reveal,play:play,final:final}[S.phase]();
+ el.innerHTML=`<h1>🤖 CREATE YOUR AI<br>2035</h1>`+hostBar()+body;
+ if(id&&$('#'+id)){$('#'+id).focus();try{$('#'+id).setSelectionRange(pos,pos)}catch(e){}}}
+(function(){try{if(!FB.apiKey||FB.apiKey.startsWith('PASTE'))return render();
+firebase.initializeApp(FB);db=firebase.database();
+isHost=location.hash==='#host';
+uid=localStorage.getItem('uid')||('u'+Math.random().toString(36).slice(2,10));localStorage.setItem('uid',uid);
+db.ref('game/state').on('value',x=>{const v=x.val();if(v){S=v;if(S.phase==='play'&&D.k!==S.sc+S.step){D.k=S.sc+S.step;D.sel=null}}else if(isHost){S.code=Math.random().toString(36).slice(2,7).toUpperCase();db.ref('game/state').set(S)}render()});
+db.ref('teams').on('value',x=>{T=x.val()||{};render()});}catch(e){console.error(e);render()}})();
+render();
+</script></body></html>
